@@ -1,0 +1,19 @@
+{
+    "name": "animateBro",
+    "main": ["jquery.animateBro.js"],
+    "version": "1.0.0",
+    "homepage": "https://github.com/jcjmcclean/jquery.animateBro",
+    "authors": [
+        "James McClean <james@jamesmcclean.com>"
+    ],
+    "description": "Bro! animateBro yo",
+    "keywords": [
+        "animate.css",
+        "scroll",
+        "jquery"
+    ],
+    "license": "GNU",
+    "dependencies": {
+        "jquery": ">=1.7"
+    }
+}
