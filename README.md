@@ -2,7 +2,8 @@
 
     // Load animateBro with options object
 	animateBro.load({
-        'minViewportHeight': 1000,
+        'minViewportHeight': 768,
+        'maxViewportHeight': 1440,
 		'elements': [
 			{
 				'element': '.section-areas ul.list-areas',
@@ -12,7 +13,7 @@
 			{
 				'element': '.section-latest ul.list-latest',
 				'hook': '.section-latest ul.list-latest',
-				'effect': 'fadeInUp'
+				'effect': 'slideInUp'
 			},
 		]
 	});
