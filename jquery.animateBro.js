@@ -10,8 +10,9 @@
 
 	*/
 
-	// Define config var
+	// Define config + initialize
 	animateBro.config;
+	animateBro.initialize = false;
 
 	// Functions to run on load
 	animateBro.load = function(options) {
@@ -49,12 +50,16 @@
 					}
 				}
 			});
+
+			// Update initialize
+			animateBro.initialize = true;
 		}
 	};
 
 	// Function to run on scroll
 	$(window).scroll(function() {
-		if(animateBro.config['elements'].length > 0) {
+		// If animateBro has been initialized
+		if(animateBro.initialize) {
 			// Loop through elements array
 			$.each(animateBro.config['elements'], function (index, value) {
 				// Check if element exists on page
