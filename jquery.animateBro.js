@@ -17,7 +17,8 @@
 	animateBro.load = function(options) {
 		// Define default plugin config
 		var defaults = {
-			'minViewportHeight': 1000,
+			'minViewportHeight': 768,
+			'maxViewportHeight': 1440,
 			'elements': []
 		};
 
@@ -32,8 +33,11 @@
 	};
 
 	animateBro.init = function() {
-		// Only allow on avg height viewports
-		if ($(window).height() < animateBro.config['minViewportHeight']) {
+		// Only allow on specified viewports
+		if (
+			$(window).height() >= animateBro.config['minViewportHeight'] &&
+			$(window).height() < animateBro.config['maxViewportHeight']
+		) {
 			// Loop through elements array
 			$.each(animateBro.config['elements'], function (index, value) {
 				// Check if element exists on page
@@ -59,6 +63,8 @@
 					if (offsetKitty.viewport(value['hook']).insideViewport && $(value['element']).css('opacity') == 0) {
 						// Add animateBro.css effect classes
 						$(value['element']).addClass('animated ' + value['effect']);
+						// Remove opacity 0 style
+						$(value['element']).css({'opacity': ''});
 					}
 				}
 			});
